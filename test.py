@@ -1,1 +1,1 @@
-print "kalle"
+print ("kalle")
