@@ -1,11 +1,11 @@
 // hello.java
-class Hello
+class Ifelse
 {
     public static void print ()
     {
-	int number = 11;//ath.rand(1, 200);
+	int number = 11;
 	if (number > 9) {
-	    System.out.println("At least two digits")
+	    System.out.println("At least two digits");
 	    if (number > 99)
 		System.out.println("Three digits");
 	}
@@ -14,9 +14,8 @@ class Hello
     }
 	
 
-   public static void main (String[] args)
+    public static void main (String[] args)
     {
-	System.out.println("One digit");
 	print();
     }
 }
