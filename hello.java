@@ -4,10 +4,11 @@ class Hello
 {
     public static void print ()
     {
-	System.out.println ("Hello Worldåäö");
+	String hello = "Hello Worldåäö";
+	System.out.println (hello.length());
 	int number = 11;//ath.rand(1, 200);
 	if (number > 9) {
-	    System.out.println("At least two digits")
+	    System.out.println("At least two digits");
 	    if (number > 99)
 		System.out.println("Three digits");
 	}
