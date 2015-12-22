@@ -30,6 +30,7 @@ public class SQLiteJDBC
       c.close();
     } catch ( Exception e ) {
       System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+      System.out.println("test");
       System.exit(0);
     }
     System.out.println("Operation done successfully");
