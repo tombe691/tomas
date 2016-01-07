@@ -9,10 +9,40 @@ public class Multiarrayresultat {
 	int mju[] = {1, 2, 2, 2, 3, 3, 3, 4};
 	int mjut[] = {4, 7, 8, 3, 2, 1, 2, 3, 4};
 	Arrays.sort(mju);
-	JOptionPane.showMessageDialog(null, "Medel blir: " + medelv(mjut));
-	JOptionPane.showMessageDialog(null, "Median blir: " + median(mjut));
-	JOptionPane.showMessageDialog(null, "Typ blir: " + mode(mjut));
-	JOptionPane.showMessageDialog(null, "Typ blir: " + mode2(mjut));
+	Arrays.sort(mjut);
+	String mvMju = Double.toString(medelv(mju));
+	String mvMjut = Double.toString(medelv(mjut));
+	String medMju = Double.toString(median(mju));
+	String medMjut = Double.toString(median(mjut));
+	String modeMju = Integer.toString(mode(mju));
+	String modeMjut = Integer.toString(mode(mjut));
+	
+	String mode2Mju = mode2(mju).toString();
+	String mode2Mjut = mode2(mju).toString();
+//	String mode2Mju = Integer.toString(mode2(mju));
+	//String mode2Mjut = Integer.toString(mode2(mjut));
+	JOptionPane.showMessageDialog(null, "Mjut\n"+Arrays.toString(mjut)+"\n"+
+				      "Medel blir: " + 
+				      medelv(mjut)+"\n"+
+				      "Median blir: " + median(mjut)+"\n"+
+				      "Typ blir: " + mode(mjut)+"\n"+
+				      "Typ2 blir: " + mode2(mjut));
+	JOptionPane.showMessageDialog(null, "Mju\n"+Arrays.toString(mju)+"\n"
+				      +"Medel blir: " + 
+				      medelv(mju)+"\n"+
+				      "Median blir: " + median(mju)+"\n"+
+				      "Typ blir: " + mode(mju)+"\n"+
+				      "Typ2 blir: " + mode2(mju));
+    
+    
+	String res[][] = new String[][] {{"\t\t", "Mju", "Mjut\n"}, 
+					 {"Medel", mvMju, mvMjut}, 
+					 {"Median", medMju, medMjut},
+					 {"Mode", modeMju, modeMjut},
+					 {"Mode2", mode2Mju, mode2Mjut}};
+	//	//JOptionPane.showMessageDialog(null, (res[0][0]+res[0][1]+res[0][2]+ 
+	//			     res[1][0]+res[1][1]+res[1][2]));
+	JOptionPane.showMessageDialog(null, Arrays.deepToString(res));
     }
     public static double medelv (int[] res) {
 	int n = res.length;
@@ -32,9 +62,6 @@ public class Multiarrayresultat {
 	}
     }
 
-    public static double typ (int[] res) {
-	return res[1]/2;
-    }
     public static int mode(int a[]) {
 	int maxValue =0, maxCount = 0;
 	
@@ -48,7 +75,6 @@ public class Multiarrayresultat {
 		maxValue = a[i];
 	    }
 	}
-	
 	return maxValue;
     }
     public static List<Integer> mode2(final int[] a) {
@@ -59,7 +85,7 @@ public class Multiarrayresultat {
 	
 	for (final int n : a) {
 	    int count = 0;
-	    System.out.println(n);
+	    //System.out.println(n);
 
 	    
 	    if (countMap.containsKey(n)) {
