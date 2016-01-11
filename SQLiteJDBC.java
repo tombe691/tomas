@@ -13,7 +13,7 @@ public class SQLiteJDBC
       System.out.println("Opened database successfully");
 
       stmt = c.createStatement();
-      ResultSet rs = stmt.executeQuery( "SELECT * FROM STUDENT;" );
+      ResultSet rs = stmt.executeQuery( "SELECT * FROM STUDENT WHERE NAMN = 'Tomas' AND KLASS = 'IS15';" );
       while ( rs.next() ) {
          String  name = rs.getString("NAMN");
          int age  = rs.getInt("ALDER");
