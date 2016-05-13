@@ -23,6 +23,18 @@ public class HelloWorldFX extends Application {
             @Override
             public void handle(ActionEvent event) {
                 System.out.println("Hello World!");
+		int[] arr = new int[10];
+		int tal = 3;
+		for (int x = 0; x < arr.length; x++)
+		    arr[x] = x + tal++;
+
+		System.out.println("Arrayen: ");
+		for (int x : arr){
+		    System.out.print(x + " ");
+		    if (x%3 == 0)
+			System.out.println();
+}
+
             }
         });
         
