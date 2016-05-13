@@ -40,8 +40,6 @@ public class Multiarrayresultat {
 					 {"Median", medMju, medMjut},
 					 {"Mode", modeMju, modeMjut},
 					 {"Mode2", mode2Mju, mode2Mjut}};
-	//	//JOptionPane.showMessageDialog(null, (res[0][0]+res[0][1]+res[0][2]+ 
-	//			     res[1][0]+res[1][1]+res[1][2]));
 	JOptionPane.showMessageDialog(null, Arrays.deepToString(res));
     }
     public static double medelv (int[] res) {
