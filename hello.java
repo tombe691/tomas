@@ -2,7 +2,7 @@
 import javax.swing.*;
 import java.util.Arrays;
 
-class Hello
+class hello
 {
     public static void print ()
     {
