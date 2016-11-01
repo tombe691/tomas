@@ -22,7 +22,7 @@ import javax.swing.Timer;
  * Ripped by rursus on 12/05/16.
  */
 
-public class Board extends JPanel implements ActionListener {
+public class Board2 extends JPanel implements ActionListener {
     private final int B_WIDTH = 300;
     private final int B_HEIGHT = 300;
     private final int DOT_SIZE = 10;
@@ -51,7 +51,7 @@ public class Board extends JPanel implements ActionListener {
     private Image head;  // head of serpent
     private Image background; // background of another serpent
 
-    public Board() {
+    public Board2() {
         addKeyListener(new TAdapter());
         setBackground(Color.black);
         setFocusable(true);

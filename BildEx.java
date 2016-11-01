@@ -3,6 +3,24 @@
  import java.awt.*;
  import java.awt.event.*; 
  import javax.swing.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+ import java.awt.*;
+ import java.awt.event.*; 
+ import javax.swing.*;
+
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+import javax.swing.Timer;
 
  public class BildEx extends JFrame implements ActionListener {
    private int bildNr = 2;
@@ -41,9 +59,9 @@ getContentPane().add(l);
    // lyssnarmetod
    public void actionPerformed(ActionEvent e) {
 
-       	ImageIcon bg = new ImageIcon("bild2.jpg");
-        background = bg.getImage();    
-        g.drawImage(background, 0, 0, 620, 620, this);
+       //ageIcon bg = new ImageIcon("bild2.jpg");
+       //ckground = bg.getImage();    
+       //drawImage(background, 0, 0, 620, 620, this);
 
 	//       bildNr = 1;//(bildNr + 1) % 2;
 	//l.setIcon(new ImageIcon("bild" + bildNr + ".gif"));
@@ -61,8 +79,8 @@ getContentPane().add(l);
    public static void main (String[] arg) {
      BildEx b = new BildEx();
    }
-    public void paintComponent(Graphics g) {
-        super.paintComponent(g);
+     /*  public void paintComponent(Graphics g) {
+        //super.paintComponent(g);
 
         doDrawing(g);
     }
@@ -70,5 +88,5 @@ getContentPane().add(l);
     private void doDrawing(Graphics g) 
     {
         g.drawImage(background, 0, 0, 620, 620, this);
-    }
+	}*/
  }

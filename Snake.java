@@ -6,7 +6,7 @@ public class Snake extends JFrame {
 
     public Snake() {
 
-        add(new Board());
+        add(new Board2());
         
         setResizable(false);
         pack();

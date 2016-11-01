@@ -1,4 +1,4 @@
-import javafx.*;
+//import javafx.*;
 import javafx.application.*;
 import javafx.stage.*;
 import javafx.scene.*;
@@ -13,12 +13,8 @@ public class fxdemo extends Application
     Button btn;
     @Override public void start(Stage primaryStage)
     {
-	// Create the button
-	BackgroundImage backgroundImage = new BackgroundImage( new Image( getClass().getResource("bild2.jpg").toExternalForm()), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
-        Background background = new Background(backgroundImage);
 
 	btn = new Button();
-        btn.setBackground(background);	
 	btn.setText("Click me please!");
 	btn.setOnAction(e -> buttonClick());
 	// Add the button to a layout pane
@@ -30,7 +26,7 @@ public class fxdemo extends Application
 	primaryStage.setScene(scene);
 	primaryStage.setTitle("The Click Me App");
 	primaryStage.show();
-    }
+    } 
     public void buttonClick()
     {
 	if (btn.getText() == "Click me please!")
