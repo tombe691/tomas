@@ -1,11 +1,12 @@
 #include<stdio.h>
-
+#include<stdlib.h>
 int main()
 {
   FILE *ptr_file;
   char buf[10];
 
-  ptr_file =fopen("/simple/test.txt","r");
+  printf("hello");
+  ptr_file =fopen("c:/tomas/c/simple/test.txt","r");
   if (!ptr_file)
     return 1;
 

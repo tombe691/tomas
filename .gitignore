@@ -43,9 +43,16 @@ Temporary Items
 .apdisk
 
 #javafiles
-.class
-.java~
+*.class
+*.java~
 .py~
 
 #exefiles
-.exe
+*.exe
+
+#c-files
+*.obj
+*.c~
+
+#c#-files
+*.cs~
