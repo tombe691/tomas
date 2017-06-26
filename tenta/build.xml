@@ -1,0 +1,59 @@
+<project name = "JunitTest" default = "help" basedir = ".">
+   <property name = "testdir" location = "test" />
+   <property name = "srcdir" location = "src" />
+   <property name = "full-compile" value = "true" />
+   <property name = "test.reports" value = "reports" />
+   
+   <path id = "classpath.base"/>
+   
+   <path id = "classpath.test">
+      <pathelement location = "lib/junit-4.10.jar" />
+      <pathelement location = "${testdir}" />
+      <pathelement location = "${srcdir}" />
+      <path refid = "classpath.base" />
+   </path>
+   
+   <target name = "clean" >
+      <delete verbose = "${full-compile}">
+         <fileset dir = "${testdir}" includes = "**/*.class" />
+      </delete>
+   </target>
+   
+   <target name = "compile" depends = "clean">
+      <javac srcdir = "${srcdir}" destdir = "${testdir}" 
+         includeantruntime="false">
+         <classpath refid = "classpath.test"/>
+      </javac>
+   </target>
+   
+  <target name = "test" depends = "compile">
+      <junit>
+         <classpath refid = "classpath.test" />
+         <formatter type = "xml" />
+         <test name = "MainTest" todir = "${test.reports}"/>
+      </junit>
+
+      <junitreport todir = "${test.reports}">
+          <fileset dir = "${test.reports}">
+            <include name = "TEST-*.xml" />
+          </fileset>
+          <report todir = "${test.reports}" />
+        </junitreport>
+      </target>
+
+      <target name = "jar">
+        <jar destfile = "jar/Main.jar" basedir = "src">
+         
+        </jar>
+    </target>
+
+    <target name = "help">
+       <echo>
+       1. "clean" rensar mappen /test.
+       2. "compile" kompilerar .java filerna
+       3. "test" kör junit tester och skapar en rapport.
+       4. "jar" skapar en .jarfil</echo>
+    </target>
+  
+   
+</project>
