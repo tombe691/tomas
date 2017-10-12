@@ -1,6 +1,7 @@
-#include<windows.h>
-#include<sstream>
-#include<string>
+#include <windows.h>
+#include <shellapi.h>
+#include <sstream>
+//#include <string>
 using namespace std;
  
 /*  Declare Windows procedure  */

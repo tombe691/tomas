@@ -28,23 +28,17 @@ int main()
    else
       printf("Entered string is not a palindrome.\n");
 
-   printf("%d %s", test, pbool(test2));
+   //printf("%d %s", test, pbool(test2));
    int x = 10;
    int y = 20;
    int z = 30;
 
-   //   int tal = 9;
-   //int tal2 = tal/3;
-   //printf("%d", tal * tal2);
+   printf("\n");
+   printf("1 %s\n", pbool(x >= 10 || x <= 10));
+   printf("2 %s\n", pbool(x < y && y > x));
+   printf("3 %s\n", pbool((x = y + z) && (x + 10 < 20)));
+   printf("4 %s\n", pbool(x > y && y > x));
 
-   int tal = 9;
-   int tal2 = tal/3;
-   printf("%d", (tal * tal2)%2);
-
-
-   printf("test %s\n", pbool(x > y && y > x));
-
-   #include <stdio.h>
 
 	double pris = 32;
 	int antalSidor = 200;
