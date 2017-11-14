@@ -29,15 +29,15 @@ int main()
       printf("Entered string is not a palindrome.\n");
 
    //printf("%d %s", test, pbool(test2));
-   int x = 10;
-   int y = 20;
-   int z = 30;
+   int x = 30;
+   int y = 10;
+   int z = 5;
 
    printf("\n");
-   printf("1 %s\n", pbool(x >= 10 || x <= 10));
+   printf("1 %s\n", pbool(x >= 10 && x <= 10));
    printf("2 %s\n", pbool(x < y && y > x));
-   printf("3 %s\n", pbool((x = y + z) && (x + 10 < 20)));
-   printf("4 %s\n", pbool(x > y && y > x));
+   printf("3 %s\n", pbool((x == y + z) || (x + 10 < 20)));
+   printf("4 %s\n", pbool(x == (y + z)*2));
 
 
 	double pris = 32;

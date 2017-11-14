@@ -16,10 +16,11 @@
 #include <iostream> // Preprocessor directives
 #include <iomanip>
 using namespace std;
-void main()
+int main()//need int, not void
 {
   // Define and initialize variables
   int hoursPerWeek = 35;
+  double weeklyWages;//need to declare variable before usage;
   double hourlyWages = 83;
   // Calculate weekly salary
   weeklyWages = hoursPerWeek * hourlyWages;
@@ -29,8 +30,8 @@ void main()
        << showpoint; // Show trailing zero’es
   cout << " Given an hourly wage of " << hourlyWages << " kr" << endl
        << " and the number of hours per week " << hoursPerWeek << endl
-       << "the weekly wages will be: " << weeklyWages << " kr" << endl
-    cout << "\nPress return!";
+       << "the weekly wages will be: " << weeklyWages << " kr" << endl; //end of line marked with semi colon
+  cout << "\nPress return!";
   cin.get(); // Wait for return
   return 0;
 }

@@ -34,7 +34,7 @@ int main()
 		priceCalculation();
 		cout << "One more time? (Y/N): ";
 		cin >> answer;
-	}while (answer = 'Y' || answer == 'y');
+	}while (answer == 'Y' || answer == 'y'); //one =-sign was missing for Y, caused declaration instead of comparison
 
 	return 0;
 }
@@ -65,9 +65,8 @@ void priceCalculation()
 	cin >> nrOfArticles;
 
 	// Calculate total price and tax rate
-	rateSEK = totalPrice * RATE;
-	totalPrice = nrOfArticles * price *(1 + RATE);
-
+	rateSEK = price * RATE/100; //totalPrice was 0, times anything stays zero, changed to price * RATE and divided with 100 to get %
+	totalPrice = nrOfArticles * price +rateSEK; //since rateSEK was calculated above, I replaced the second rate/calculation with the value already calculated
 	// Show result with 2 decimal places
 	cout << fixed << showpoint << setprecision(2);
 

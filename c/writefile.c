@@ -1,10 +1,11 @@
 #include <stdio.h>
 
-main() {
+int main() {
    FILE *fp;
 
-   fp = fopen("c:/tomas/c/simple/test23.txt", "w+");
-   fprintf(fp, "This is testing for едц fprintf...\n");
+   fp = fopen("c:/tomas/c/simple/test34.txt", "r+");
+   fprintf(fp, "This is testasdfasdfasdfing for едц fprintf...\n");
    fputs("This is testing for fputs...\n", fp);
    fclose(fp);
+   return 0;
 }
