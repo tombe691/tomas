@@ -1,14 +1,14 @@
 #include "unity/src/unity.h"
-#include "DumbExample.h"
+#include "main2_refactored.h"
 
-void test_AddTwoNumbers(void)
+void test_MultiplyTwoNumbers(void)
 {
-  TEST_ASSERT_EQUAL_FLOAT(4.0, AddTwoNumbers(2.0, 2.0));
+  TEST_ASSERT_EQUAL_FLOAT(6.0, eff_enk(2.0, 3.0));
 }
 
 int main(void)
 {
   UNITY_BEGIN();
-  RUN_TEST(test_AddTwoNumbers);
+  RUN_TEST(test_MultiplyTwoNumbers);
   return UNITY_END();
 }

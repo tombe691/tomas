@@ -6,8 +6,8 @@ using namespace std;
 class smallobj //define a class
 {
 private:
-  int somedata; //class data
 public:
+  int somedata; //class data
   void setdata(int d) //member function to set data
   { somedata = d; }
   void showdata() //member function to display data
@@ -21,5 +21,6 @@ int main()
   s2.setdata(1776);
   s1.showdata(); //call member function to display data
   s2.showdata();
+  cout << s2.somedata;
   return 0;
 }
