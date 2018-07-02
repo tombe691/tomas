@@ -8,6 +8,6 @@ void test()
 
     int i = 0;
     for(i=1;i<10;i++) {
-        printf("i = %d", i);
+        printf("i = %d \n", i);
     }
 }

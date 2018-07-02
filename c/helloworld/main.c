@@ -5,8 +5,8 @@
 int main()
 {
   int test2;
-  scanf("%d", &test2);
-  printf("");
+  //  scanf("%d", &test2);
+  //  printf("");
   test();
   return 0;
 }
