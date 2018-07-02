@@ -216,49 +216,40 @@ int main()
     system("chcp 1252");
     system("cls");
     bool exit = false;
-
-    while (exit == false)
+    int val;
+    do
     {
-        printf("\n");
-        int val = choice();
+        val = choice();
 
-        if(val == 1)
-	  {
+	switch(choice()) {
+	case 1:
 	  FirstCase();
-        }
-        else if(val == 2)
-	  {
-	    SecondCase(); 
-        }
-        else if(val == 3)
-        {
+	  break;
+	case 2:
+	  SecondCase(); 
+	  break;
+	case 3:
 	  ThirdCase();
-        }
-        else if(val == 4)
-        {
+	  break;
+	case 4:
 	  FourthCase();
-        }
-        else if(val == 5)
-        {
+	  break;
+	case 5:
+	  break;
 	  FifthCase();
-        }
-        else if(val == 6)
-        {
+	case 6:
 	  SixthCase();
-        }
-        else if(val == 7)
-        {
+	  break;
+	case 7:
 	  SeventhCase();
+	  break;
+	case 0:
+	  break;
+	default:
+	  printf("Fel alternativ försök igen!: \n");
+	  break;
         }
-        else if (val == 0)
-        {
-            exit = true;
-        }
-        else
-        {
-            printf("Fel alternativ försök igen!: \n");
-        }
-    }
-
+    } while (val !=0);
+    
     return 0;
 }
