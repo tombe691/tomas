@@ -19,17 +19,13 @@ TEST_TEAR_DOWN(ProductionCode)
 {
 }
 
-TEST(ProductionCode, FindFunction_WhichIsBroken_ShouldReturnZeroIfItemIsNotInList_WhichWorksEvenInOurBrokenCode)
+TEST(ProductionCode, FindFunction1)
 {
   //All of these should pass
   TEST_ASSERT_EQUAL(0, FindFunction_WhichIsBroken(78));
-  TEST_ASSERT_EQUAL(0, FindFunction_WhichIsBroken(1));
-  TEST_ASSERT_EQUAL(0, FindFunction_WhichIsBroken(33));
-  TEST_ASSERT_EQUAL(0, FindFunction_WhichIsBroken(999));
-  TEST_ASSERT_EQUAL(0, FindFunction_WhichIsBroken(-1));
 }
 
-TEST(ProductionCode, FindFunction_WhichIsBroken_ShouldReturnTheIndexForItemsInList_WhichWillFailBecauseOurFunctionUnderTestIsBroken)
+TEST(ProductionCode, FindFunction2)
 {
   // You should see this line fail in your test summary
   TEST_ASSERT_EQUAL(1, FindFunction_WhichIsBroken(34));
@@ -40,7 +36,7 @@ TEST(ProductionCode, FindFunction_WhichIsBroken_ShouldReturnTheIndexForItemsInLi
   TEST_ASSERT_EQUAL(8, FindFunction_WhichIsBroken(8888));
 }
 
-TEST(ProductionCode, FunctionWhichReturnsLocalVariable_ShouldReturnTheCurrentCounterValue)
+TEST(ProductionCode, Function3)
 {
     //This should be true because setUp set this up for us before this test
     TEST_ASSERT_EQUAL_HEX(0x5a5a, FunctionWhichReturnsLocalVariable());
@@ -50,13 +46,13 @@ TEST(ProductionCode, FunctionWhichReturnsLocalVariable_ShouldReturnTheCurrentCou
     TEST_ASSERT_EQUAL_HEX(0x1234, FunctionWhichReturnsLocalVariable());
 }
 
-TEST(ProductionCode, FunctionWhichReturnsLocalVariable_ShouldReturnTheCurrentCounterValueAgain)
+TEST(ProductionCode, Function4)
 {
     //This should be true again because setup was rerun before this test (and after we changed it to 0x1234)
     TEST_ASSERT_EQUAL_HEX(0x5a5a, FunctionWhichReturnsLocalVariable());
 }
 
-TEST(ProductionCode, FunctionWhichReturnsLocalVariable_ShouldReturnCurrentCounter_ButFailsBecauseThisTestIsActuallyFlawed)
+TEST(ProductionCode, Function5)
 {
     //Sometimes you get the test wrong.  When that happens, you get a failure too... and a quick look should tell
     // you what actually happened...which in this case was a failure to setup the initial condition.

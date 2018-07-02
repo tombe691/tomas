@@ -8,6 +8,7 @@ int multi_table(int x,int n)
       printf("\n\t%d * %d = %d\n",x,i,y);
       y+=x;
     }
+  printf("hej");
   return y;
 }
 
@@ -15,6 +16,7 @@ int multi_table(int x,int n)
 void main()
 {
   int a = multi_table(3, 10);
+	printf("a%d", a);
 }
 
 
