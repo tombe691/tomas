@@ -6,7 +6,7 @@ int main()
   char buf[10];
 
   printf("hello");
-  ptr_file =fopen("c:/tomas/c/simple/test.txt","r");
+  ptr_file =fopen("c:/tomas/c/simple/test5555556567753665.txt","w+");
   if (!ptr_file)
     return 1;
 

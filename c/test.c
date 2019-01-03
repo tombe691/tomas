@@ -1,17 +1,17 @@
 #include <stdio.h>
 
-int b = 3;
+int a = 0;
 
 void f() {
-  int c = 2;
-  static int a;
-  a = 0;
+  int b = 0;
+  static int c;
+  c = 0;
   printf("a=%d b=%d c=%d\n", ++a, ++b, ++c);
 }
 
 int main()
 {
   f();
-  ++b;
+  ++a;
   f();
 }

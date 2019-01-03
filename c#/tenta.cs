@@ -6,7 +6,13 @@ namespace Program1
  {
    static void Main(string[] args)
    {
-    int a = 15, b = 5, c = 2, d = 0;
+   int counter = 0;
+   while (counter < 100)
+   {  	     
+     ++counter;
+     Console.WriteLine(counter);
+   }
+   int a = 15, b = 5, c = 2, d = 0;
 
     a = c - d;
     b = f1(b + 5, a);

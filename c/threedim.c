@@ -37,5 +37,5 @@ void main()
       printf("\n");
     }
   getch();
-  printf("%d\t",arr[0][1][2]);
+  printf("%d\t",arr[1][2][0]);
 }

@@ -41,7 +41,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 	return (DefWindowProc(hwnd,message,wParam,lParam));
 }
 /*	Main function*/
-int APIENTRY WinMain(HINSTANCE hInstance,
+int WINAPI WinMain(HINSTANCE hInstance,
                      HINSTANCE hPrevInstance,
                      LPSTR     lpCmdLine,
                      int       nCmdShow)
