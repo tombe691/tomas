@@ -1,0 +1,7 @@
+C:\tomas\c#\malmo\assignment1A\Assignment1A\Assignment1A\bin\Debug\Assignment1A.exe.config
+C:\tomas\c#\malmo\assignment1A\Assignment1A\Assignment1A\bin\Debug\Assignment1A.exe
+C:\tomas\c#\malmo\assignment1A\Assignment1A\Assignment1A\bin\Debug\Assignment1A.pdb
+C:\tomas\c#\malmo\assignment1A\Assignment1A\Assignment1A\obj\Debug\Assignment1A.csprojAssemblyReference.cache
+C:\tomas\c#\malmo\assignment1A\Assignment1A\Assignment1A\obj\Debug\Assignment1A.csproj.CoreCompileInputs.cache
+C:\tomas\c#\malmo\assignment1A\Assignment1A\Assignment1A\obj\Debug\Assignment1A.exe
+C:\tomas\c#\malmo\assignment1A\Assignment1A\Assignment1A\obj\Debug\Assignment1A.pdb

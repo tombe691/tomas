@@ -1,0 +1,6 @@
+
+kale:
+	gcc -o test main.c func.c
+
+beta:
+	gcc -o betatest main.c func.c
