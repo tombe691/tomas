@@ -9,8 +9,9 @@ void main()
 {
     struct node
     {
-        int num;
-        struct node *ptr;
+      int num;
+      char firstName[50];
+      struct node *ptr;
     };
     typedef struct node NODE;
  
@@ -22,15 +23,19 @@ void main()
     while (choice)
     {
         head  = (NODE *)malloc(sizeof(NODE));
+	printf("Enter the first name to insert : \n");
+	scanf("%s", &head-> firstName);
         printf("Enter the data item\n");
         scanf("%d", &head-> num);
         if (first != 0)
         {
+	  printf("in if (first not 0)\n");
             temp->ptr = head;
             temp = head;
         }
         else
         {
+	  printf("in else no previous record\n");
             first = temp = head;
         }
         fflush(stdin);
@@ -45,6 +50,7 @@ void main()
     while (temp != 0)
     {
         printf("%d=>", temp->num);
+        printf("%s=>", temp->firstName);
         count++;
         temp = temp -> ptr;
     }

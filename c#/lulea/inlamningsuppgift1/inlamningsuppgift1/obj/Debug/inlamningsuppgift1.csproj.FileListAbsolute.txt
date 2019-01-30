@@ -1,0 +1,6 @@
+C:\tomas\c#\lulea\inlamningsuppgift1\inlamningsuppgift1\obj\Debug\inlamningsuppgift1.csprojAssemblyReference.cache
+C:\tomas\c#\lulea\inlamningsuppgift1\inlamningsuppgift1\obj\Debug\inlamningsuppgift1.csproj.CoreCompileInputs.cache
+C:\tomas\c#\lulea\inlamningsuppgift1\inlamningsuppgift1\bin\Debug\inlamningsuppgift1.exe
+C:\tomas\c#\lulea\inlamningsuppgift1\inlamningsuppgift1\bin\Debug\inlamningsuppgift1.pdb
+C:\tomas\c#\lulea\inlamningsuppgift1\inlamningsuppgift1\obj\Debug\inlamningsuppgift1.exe
+C:\tomas\c#\lulea\inlamningsuppgift1\inlamningsuppgift1\obj\Debug\inlamningsuppgift1.pdb

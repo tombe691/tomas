@@ -3,9 +3,9 @@
 
 TEST_GROUP_RUNNER(ProductionCode)
 {
-  RUN_TEST_CASE(ProductionCode, FindFunction1);
-  RUN_TEST_CASE(ProductionCode, FindFunction2);
-  RUN_TEST_CASE(ProductionCode, Function3);
-  RUN_TEST_CASE(ProductionCode, Function4);
-  RUN_TEST_CASE(ProductionCode, Function5);
+  RUN_TEST_CASE(ProductionCode, FindFunction_WhichIsBroken_ShouldReturnZeroIfItemIsNotInList_WhichWorksEvenInOurBrokenCode);
+  RUN_TEST_CASE(ProductionCode, FindFunction_WhichIsBroken_ShouldReturnTheIndexForItemsInList_WhichWillFailBecauseOurFunctionUnderTestIsBroken);
+  RUN_TEST_CASE(ProductionCode, FunctionWhichReturnsLocalVariable_ShouldReturnTheCurrentCounterValue);
+  RUN_TEST_CASE(ProductionCode, FunctionWhichReturnsLocalVariable_ShouldReturnTheCurrentCounterValueAgain);
+  RUN_TEST_CASE(ProductionCode, FunctionWhichReturnsLocalVariable_ShouldReturnCurrentCounter_ButFailsBecauseThisTestIsActuallyFlawed);
 }

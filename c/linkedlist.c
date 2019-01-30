@@ -3,21 +3,22 @@
 #include <string.h>
 int main()
 {
-  struct stock {
-    char symbol[5];
-    struct stock *next;
+  struct person {
+    char name[5];
+    
+    struct person *next;
   };
 
-  struct stock *first;
-  struct stock *current;
-  struct stock *current1;
-  struct stock *current2;
-  struct stock *current3;
-  struct stock *temp;
-  struct stock *new;
+  struct person *first;
+  struct person *current;
+  struct person *current1;
+  struct person *current2;
+  struct person *current3;
+  struct person *temp;
+  struct person *new;
 
   /* Create structure in memory */
-  first=(struct stock *)malloc(sizeof(struct stock));
+  first=(struct person *)malloc(sizeof(struct person));
   if(first==NULL)
     {
       puts("Some kind of malloc() error");
@@ -28,7 +29,7 @@ int main()
   strcpy(current->symbol,"GOOG");
   current->next=NULL;
 
-  new=(struct stock *)malloc(sizeof(struct stock));
+  new=(struct person *)malloc(sizeof(struct person));
   if(new==NULL)
     {
       puts("Another malloc() error");
@@ -39,7 +40,7 @@ int main()
   strcpy(current1->symbol,"MSFT");
   current1->next=NULL;
 
-  new=(struct stock *)malloc(sizeof(struct stock));
+  new=(struct person *)malloc(sizeof(struct person));
   if(new==NULL)
     {
       puts("Another malloc() error");
@@ -50,7 +51,7 @@ int main()
   strcpy(current2->symbol,"AMAZ");
   current2->next=NULL;
 
-  new=(struct stock *)malloc(sizeof(struct stock));
+  new=(struct person *)malloc(sizeof(struct person));
   if(new==NULL)
     {
       puts("Another malloc() error");
