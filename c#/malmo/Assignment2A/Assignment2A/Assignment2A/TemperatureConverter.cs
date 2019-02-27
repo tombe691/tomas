@@ -1,57 +1,101 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Assignment2A
+/// <summary>
+/// TemperatureConverter.cs
+/// 
+/// Created:    By: C# student Tomas Berggren, Feb 2nd 2019
+/// Purpose:    This class contains the menu and methods to print and 
+/// calculate the conversions between celsius and fahrenheit.
+/// </summary>
 {
+    /// <summary>
+    /// The Start method call the menu, read the user choice and call
+    /// the function containing the user choose. 
+    /// </summary>
     class TemperatureConverter
     {
         public void Start()
         {
             int choice = -1;
-
-            while (choice !=0)      //Loop until the user writes a 0
+            //Loop until the user writes a 0
+            while (choice !=0)
             {
-                WriteMenuText();    //Display the menu
-
-                //Read the user input (0-4)
-                choice = Input.ReadIntegerConsole();
+                //Display the menu
+                WriteMenuText();    
+                //Read the user input (0-2)
+                choice = Input.ReadIntegerConsole("Your choice: ");
+                switch (choice)
+                {
+                    case 1:
+                        CalculateCelsiusToFahrenheit();
+                        break;
+                    case 2:
+                        CalculateFahrenheitToCelsius();
+                        break;
+                    default:
+                        Console.WriteLine("Not a valid choice, please try again");
+                        break;
+                }
             }
-            Console.Write("\nGreetings from a Temp object!\n\n");
-            //DisplayMenu();
-            //ReadAndSavePetData();
-            //DisplayPetInfo();
         }
         //class method to get user input and save it
-        public void CalculateCelciusToFahrenheit()
+        public void CalculateCelsiusToFahrenheit()
         {
+            Console.WriteLine("\n");
+            for (double celsius = 0; celsius <= 100; celsius += 5)
+            {
+                double fahrenheit = CelsiusToFahrenheit(celsius);
+                Console.Write($"{celsius,16:N}");
+                Console.Write(" C = ");
+                Console.Write($"{fahrenheit,6:N}");
+                Console.WriteLine(" F");
+            }
         }
         //class method to display info on screen
-        public void CalculateFahrenheitToCelcius()
+        public void CalculateFahrenheitToCelsius()
         {
+            double celsius = 0;
+            Console.WriteLine("\n");
+            for (double fahrenheit = 0; fahrenheit <= 212; fahrenheit += 4)
+            {
+                celsius = FahrenheitToCelcius(fahrenheit);
+                Console.Write($"{fahrenheit,12:N}");
+                Console.Write(" C = ");
+                Console.Write($"{celsius,6:N}");
+                Console.WriteLine(" F");
+            }
         }
-        public void CelciusToFahrenheit(double celcius)
-        {
-        }
+        /// <summary>
+        /// class method to display Main Menu
+        /// </summary>
         public void WriteMenuText()
         {
-            DisplayMenu();
+            Console.Write("\n****************************************");
+            Console.Write("\n                   MAIN MENU");
+            Console.Write("\n****************************************");
+            Console.Write("\n     Convert Fahrenheit to Celcius  : 1");
+            Console.Write("\n     Convert Celsius to Fahrenheit  : 2");
+            Console.Write("\n     Exit the Converter             : 0");
+            Console.Write("\n****************************************\n\n");
         }
-        public void DisplayMenu()
+        /// <summary>
+        /// class method to convert fahrenheit to celsius
+        /// </summary>
+        /// <param name="fahrenheit"></param>
+        /// <returns>celsius</returns>
+        public double FahrenheitToCelcius(double fahrenheit)
         {
-            Console.Write("\n**************************************\n");
-            Console.Write("\n                   MAIN MENU\n\n");
-            Console.Write("\n**************************************\n");
-            Console.Write("\n     Convert Fahrenheit to Celcius  : 1\n");
-            Console.Write("\n     Convert Celsius to Fahrenheit  : 2\n");
-            Console.Write("\n     Exit the Converter\n\n");
-            Console.Write("\n**************************************\n\n");
-            Console.Write("\nYour choice:\n\n");
-
+            return (fahrenheit - 32) / 1.8;
         }
-        //class method to display info on screen
-        public void FahrenheitToCelcius(double fahrenheit)
+        /// <summary>
+        /// class method to convert celsius to fahrenehit
+        /// </summary>
+        /// <param name="celsius"></param>
+        /// <returns>fahrenheit</returns>
+        public double CelsiusToFahrenheit(double celsius)
         {
+            return (celsius * 1.8 + 32);
         }
     }
 }
