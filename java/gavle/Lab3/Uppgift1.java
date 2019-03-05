@@ -1,3 +1,9 @@
+/*
+    Uppgift1
+    Förklara vad som händer.
+    Tomas Berggren, tombe691@gmail.com
+    2019-02-14
+*/
 import java.math.BigDecimal;
 
 public class Uppgift1 {

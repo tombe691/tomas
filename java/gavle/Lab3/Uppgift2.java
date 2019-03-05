@@ -1,3 +1,9 @@
+/*
+    Uppgift2
+    räkna ut area och diagonal med javakod.
+    Tomas Berggren, tombe691@gmail.com
+    2019-02-18
+*/
 import java.util.Scanner;
 import java.lang.Math;
 
@@ -24,7 +30,6 @@ public class Uppgift2 {
         else {
 	    // Output user input
             System.out.println("Felaktig inmatning, returnerar 0");
-
         }
         return side;
     }
@@ -42,7 +47,8 @@ public class Uppgift2 {
 	    diagonal = Math.sqrt(side_c);
             System.out.println("Diagonalen är: "+diagonal);
 
-	    if ((side_a - side_b) < 0.000000001){
+	    double summa = side_a-side_b;
+	    if (Math.abs(summa) < 0.000000001){
 		System.out.println("Figuren är en kvadrat");
 	    }
 	    else {

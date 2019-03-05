@@ -1,24 +1,28 @@
+/*
+    Uppgift3
+    hitta högsta och lägsta tal med javakod.
+    Tomas Berggren, tombe691@gmail.com
+    2019-02-10
+*/
 import java.util.Scanner;
-import java.lang.Math;
+import java.util.Arrays;
 
 
 
 public class Uppgift3 {
-    public static double ReadInput(String text){
-        double side = 0;
+    public static int ReadInput(String text){
+        int number = 0;
 	// Create a Scanner object
         Scanner myObj = new Scanner(System.in); 
-        System.out.println("Mata in sida "+text+" :");
+        System.out.print("Mata in tal "+text+" :");
         if(myObj.hasNext()) {
-            if (myObj.hasNextDouble()) {
+            if (myObj.hasNextInt()) {
 		// Read user input
-                side = myObj.nextDouble();  
-		// Output user input
-                System.out.println("Sida "+text+" är: " + side);  
+                number = myObj.nextInt();  
             }
             else {
 		// Output user input
-                System.out.println("Sida "+text+" är inte ett tal, du matade in: " + myObj.nextLine());  
+                System.out.println("Tal "+text+" är inte ett tal, du matade in: " + myObj.nextLine());  
             }
         }
         else {
@@ -26,28 +30,20 @@ public class Uppgift3 {
             System.out.println("Felaktig inmatning, returnerar 0");
 
         }
-        return side;
+        return number;
     }
     public static void main (String[] args) {
-        int a = 12;
-        double side_a, side_b, side_c, area, diagonal;
-        side_a = ReadInput("a");
-        side_b = ReadInput("b");
+        int[] array = new int[3];
+        double number_1, number_2, number_3;
+        array[0] = ReadInput("1");
+        array[1] = ReadInput("2");
+        array[2] = ReadInput("3");
 
-        if (side_a * side_b > 0){
-            area = side_a*side_b;
-            System.out.println("Arean är: "+area);
-
-	    side_c = (side_a*side_a)+(side_b*side_b);
-	    diagonal = Math.sqrt(side_c);
-            System.out.println("Diagonalen är: "+diagonal);
-
-	    if ((side_a - side_b) < 0.000000001){
-		System.out.println("Figuren är en kvadrat");
-	    }
-	    else {
-		System.out.println("Figuren är en rektangel");
-	    }
-	}
+	System.out.println("Det första talet är "+array[0]+".");  
+	System.out.println("Det andra talet är "+array[1]+".");  
+	System.out.println("Det tredje talet är "+array[2]+".");  
+	Arrays.sort(array);
+	System.out.println("\nDet största talet är "+array[2]+".");  
+	System.out.println("\nDet minsta talet är "+array[0]+".");  
     }
 }
