@@ -1,10 +1,10 @@
 /*
-    Uppgift2
-    Gissa tal.
+    Uppgift3
+    Fixa logiska fel.
     Tomas Berggren, tombe691@gmail.com
     2019-03-18
 */
-import java.util.Scanner;
+//import java.util.Scanner;
 
 
 public class Uppgift3 {
