@@ -2,7 +2,7 @@
     Uppgift1
     skriv ut multiplikationstabell.
     Tomas Berggren, tombe691@gmail.com
-    2019-03-18
+    2019-03-28
 */
 import java.util.Scanner;
 
@@ -32,7 +32,6 @@ public class Uppgift1 {
         return input;
     }
     public static void main (String[] args) {
-        int a = 12;
         int table, size;
         table = ReadInput("vilken tabell");
         size = ReadInput("hur långt");
@@ -54,6 +53,5 @@ public class Uppgift1 {
 	    }
 	    System.out.println("");
 	}
-	//System.out.println("Figuren är en rektangel");
     }
 }

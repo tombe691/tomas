@@ -35,7 +35,7 @@ public class Uppgift2 {
         int number;
 	boolean play = true;
 	int guess = (int) (Math.random () * 20) + 1;
-
+	// game loop runs until correct answer
 	while(play) {
 	    number = ReadInput(" tal mellan 1 och 20");
 
