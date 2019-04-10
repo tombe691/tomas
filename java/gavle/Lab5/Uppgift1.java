@@ -6,7 +6,6 @@
 */
 import java.util.Scanner;
 import java.util.Arrays;
-//import java.util.*;
 
 
 public class Uppgift1 {
@@ -19,12 +18,11 @@ public class Uppgift1 {
             if (myObj.hasNextInt()) {
 		// Read user input
                 input = myObj.nextInt();  
-		// Output user input
-                //System.out.println(text+" : " + input);  
             }
             else {
 		// Output user input
-                System.out.println("Inmatningen för "+text+" är inte ett tal, du matade in: " + myObj.nextLine());  
+                System.out.println("Inmatningen för "+text+" är inte ett tal, du matade in: " +
+				   myObj.nextLine());  
             }
         }
         else {
@@ -34,7 +32,7 @@ public class Uppgift1 {
         return input;
     }
     public static void main (String[] args) {
-        int size, next;
+        int size;
 	// read number of values
 	size = ReadInput("Hur många värden ska registreras?\nAnge ett heltal");
 	// create array with the size given

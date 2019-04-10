@@ -1,6 +1,6 @@
 /*
   Uppgift2
-  Skriv ut baklänges.
+  Skriv ut inmatad text framlänges och baklänges.
   Tomas Berggren, tombe691@gmail.com
   2019-03-31
 */
