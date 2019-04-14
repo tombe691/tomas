@@ -25,6 +25,7 @@ public class Problem1 {
     //överlagrade då de har olika inparametrar
     public static void main (String[] args) {
 	numberLine();
+	System.out.println();
 	numberLine(3, 5);
     }
 }

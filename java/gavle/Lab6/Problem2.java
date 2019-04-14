@@ -1,5 +1,5 @@
 /*
-  Uppgift1
+  Uppgift2
   Addera och multiplicera med metoder.
   Tomas Berggren, tombe691@gmail.com
   2019-04-08
