@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Assignment4Win
 {
+    /// <summary>
+    /// Main form class
+    /// </summary>
     public partial class MainForm : Form
     {
         Party party;
@@ -18,7 +14,9 @@ namespace Assignment4Win
             InitializeComponent();
             InitializeGUI();
         }
-
+        /// <summary>
+        /// Method to set GUI defaults
+        /// </summary>
         private void InitializeGUI()
         {
             lblNumGuests.Text = string.Empty;
@@ -28,7 +26,6 @@ namespace Assignment4Win
             lstAllGuests.Items.Clear();
 
             grpAddGuests.Enabled = false;
-
             grpNewParty.Enabled = true;
         }
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -45,7 +42,11 @@ namespace Assignment4Win
         {
 
         }
-
+        /// <summary>
+        /// When clicking create a new party is created
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCreateList_Click(object sender, EventArgs e)
         {
             bool maxNumOK = CreateParty();
@@ -60,7 +61,10 @@ namespace Assignment4Win
                 UpdateGUI();
             }
         }
-
+        /// <summary>
+        /// A party is stored in an vector with the size entered
+        /// </summary>
+        /// <returns></returns>
         private bool CreateParty()
         {
             int maxNumber = 0;
@@ -78,13 +82,25 @@ namespace Assignment4Win
             }
             return ok;
         }
-        // complete with more code here
+        /// <summary>
+        /// Check if cost per person is correct
+        /// </summary>
+        /// <returns></returns>
         private bool ReadCostPerPerson()
         {
-            double amount = 0.0;
-            bool value = true;
+            //double instead?
+            int amount = 0;
+            bool value = false;
+            if (int.TryParse(txtAmount.Text, out amount) && (amount > 0))
+            {
+                value = true;
+                party.CostPerCapita = amount;
+            }
             return value;
         }
+        /// <summary>
+        /// GUI updates after each change
+        /// </summary>
         private void UpdateGUI()
         {
             lstAllGuests.Items.Clear();
@@ -101,10 +117,14 @@ namespace Assignment4Win
                 return;
 
             double totalCost = party.CalcTotalCost();
-            lblTotalCost.Text = totalCost.ToString("0.00");
+           lblTotalCost.Text = totalCost.ToString("0.00");
             lblNumGuests.Text = party.Count.ToString();
         }
-
+        /// <summary>
+        /// add new person to party
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (TrimNames())
@@ -116,7 +136,10 @@ namespace Assignment4Win
                     UpdateGUI();
             }
         }
-
+        /// <summary>
+        /// method to trim names
+        /// </summary>
+        /// <returns></returns>
         private bool TrimNames()
         {
             if ((!ValidateText(txtFirstName.Text)) ||
@@ -128,7 +151,11 @@ namespace Assignment4Win
             txtLastName.Text = txtLastName.Text.Trim();
             return true;
         }
-
+        /// <summary>
+        /// method to validate the text is filled in for first and last name
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
         private bool ValidateText(string text)
         {
             text = text.Trim();
@@ -139,6 +166,32 @@ namespace Assignment4Win
                 return false;
             }
             return true;
+        }
+
+        private void lblTotalCost_Click(object sender, EventArgs e)
+        {
+        }
+        /// <summary>
+        /// method for delete selected button action
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int index = lstAllGuests.SelectedIndex;
+            party.DeleteAt(index);
+            UpdateGUI();
+        }
+        /// <summary>
+        /// method to change selected value in list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnChange_Click(object sender, EventArgs e)
+        {
+            int index = lstAllGuests.SelectedIndex;
+            party.ChangeAt(index, txtFirstName.Text, txtLastName.Text);
+            UpdateGUI();
         }
     }
 }

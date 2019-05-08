@@ -66,38 +66,7 @@ namespace Ryggsäcken
                         Console.ReadLine();
                         break;
                 }
-
-                /* if (menyVal == 1)
-                 {
-                     Console.Write("Skriv vad som läggs till i ryggsäcken: ");
-                     // string = Console.ReadLine();
-                     Console.ReadLine();
-
-                 }
-
-                 else if (menyVal == 2)
-                 {
-
-                 }
-
-                 else if (menyVal == 3)
-                 {
-
-                 }
-
-                 else if (menyVal == 4)
-                 {
-                     break; // Avslutar Programmet
-                 }
-
-                 else
-                 {
-                     Console.WriteLine("\n\tOgiltligt val!");
-                     Console.ReadLine();
-                 }
-                 */
             }
-           
                 Console.ReadLine();
         }
     }
