@@ -15,10 +15,10 @@ public class Problem2 {
     int points;
 
     public Problem2(int num, String studentName, String studentAdress, int schoolPoints) {
-    number = num;
-    name = studentName;
-    adress = studentAdress;
-    points = schoolPoints;
+	number = num;
+	name = studentName;
+	adress = studentAdress;
+	points = schoolPoints;
     }
 
     // method 1
