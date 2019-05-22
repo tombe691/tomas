@@ -62,3 +62,12 @@ Temporary Items
 
 #iml-files
 *.iml
+
+*.dtbcache
+
+*.suo
+
+*.db.lock
+
+*.storage*
+
