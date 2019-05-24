@@ -35,9 +35,6 @@ class OrderLine{
 }  
 
 class Order{  
-    public static void main(String args[]){  
-	//Creating user-defined class objects  
-
 	//creating arraylist  
 	ArrayList<OrderLine> al=new ArrayList<OrderLine>();  
 	//Getting Iterator  
@@ -48,5 +45,4 @@ class Order{
 	    System.out.println(ol.articleID+" "+ol.quantity+" "+
 			       ol.pricePerPiece+" "+ol.taxRate);  
 	}  
-    }  
 }  
