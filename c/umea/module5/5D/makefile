@@ -9,7 +9,7 @@ program1.o : src/main.c src/a_functions.c src/b_functions.c src/c_functions.c sr
 clean :
 	rm program1 *.o
 
-PREFIX = /usr/local
+PREFIX = /home/pi/Documents
 
 .PHONY: install
 install: program1
