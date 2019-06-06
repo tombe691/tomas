@@ -1,0 +1,18 @@
+Namn		Persnr		Distrikt		Antal
+
+hgfrd		hgfd		hgfd			1
+
+gfds		gfds		trew			22
+
+2 säljare har nått nivå 1: 0-49 artiklar
+hgfd		hgfd		hgfds			55
+
+1 säljare har nått nivå 2: 50-99 artiklar
+hgfd		hgf		djhgfd			108
+
+1 säljare har nått nivå 3: 100-199 artiklar
+dsdsaf		aasdf		adsf			234
+
+qwert		wer		erg			400
+
+2 säljare har nått nivå 4: över 199 artiklar
