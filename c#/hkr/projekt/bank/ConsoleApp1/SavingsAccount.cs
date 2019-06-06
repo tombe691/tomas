@@ -13,12 +13,16 @@ namespace ConsoleApp1
         public int type { get; set; }
         public int kontonummer { get; set; }
 
-        public SavingsAccount(double saldo1, double ranta1, int type1, int kontonummer1)
+        
+
+        public SavingsAccount(double saldo1, double ranta1, int type1)
         {
             saldo = saldo1;
             ranta = ranta1;
             type = type1;
-            kontonummer = kontonummer1;
+            //kontonummer = this.accountNr;
+
+            //this.accountNr++;
         }
     }
 }

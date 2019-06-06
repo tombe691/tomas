@@ -17,7 +17,8 @@ public class Order {
         this.customerID=customerID;
         this.deliveryAddress=deliveryAddress;
 
-        // Uppgift: L¨agg till kod f¨or att ¨overf¨ora // v¨ardena fr˚an parametrarna till instansvariablerna
+        // Uppgift: L¨agg till kod for att overfora
+	// vardena fraan parametrarna till instansvariablerna
     }
     public void addOrderLine(int articleID,
                              int quantity,
@@ -27,7 +28,7 @@ public class Order {
                 quantity,
                 pricePerPiece,
                 taxRate);
-        orderList.add (orderLine); // L¨agg till raden till listan
+        orderList.add (orderLine); // Lagg till raden till listan
     }
     public void printOrderLines() {
         for (OrderLine line: orderList) {
@@ -47,5 +48,4 @@ public class Order {
         }
         return price;
     }
-    // Fler metoder...
 }

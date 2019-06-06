@@ -5,7 +5,7 @@ public class OrderLine{
     double taxRate;
 
     OrderLine(int articleId, int quantity, double pricePerPiece, double taxRate){
-        this.articleID=articleID;
+        this.articleID=articleId;
         this.quantity=quantity;
         this.pricePerPiece=pricePerPiece;
         this.taxRate=taxRate;

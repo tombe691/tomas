@@ -13,8 +13,8 @@ public class Uppgift3
 	int[] numbers = { 5, 0, -23 };
 	// byter ut värdet på index 1, dvs 0 till 16
 	numbers[1] += 16;
-	// skapar en ny array som pekar på adressen till den första arrayen
-	// hade man använt pekare mer tydligt i java hade det varit tydligare
+	// skapar en ny array (values) som pekar på adressen till den första arrayen
+	// (numbers) hade man använt pekare mer tydligt i java hade det varit tydligare
 	// den andra variabeln pekar på samma minnesutrymme
 	int[] values = numbers;
 	// ändrar värdet på den första adressen till 10, eftersom adressen
