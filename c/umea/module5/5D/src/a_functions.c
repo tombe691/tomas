@@ -8,4 +8,5 @@
 void print_A()
 {
 	printf(A_MESSAGE);
+	printf("hej igen");
 }
