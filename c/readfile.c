@@ -5,16 +5,15 @@ int main()
   FILE *ptr_file;
   char buf[10];
 
-  printf("hello");
-  ptr_file =fopen("c:/tomas/c/simple/test5555556567753665.txt","w+");
+  ptr_file =fopen("c:/tomas/c/simple/testutf8.txt","r");   //öppnar fil för läsning
   if (!ptr_file)
     return 1;
-
-  while (fgets(buf,10, ptr_file)!=NULL){
+  //så länge vi inte kommer till slutet, läs in 10 tecken i taget, observera radbrytningar
+  while (fgets(buf,10, ptr_file)!=NULL){      
     printf("%s",buf);
-    system("pause");
+    system("pause");//väntar för att visa rad för rad
   }
 
-  fclose(ptr_file);
+  fclose(ptr_file);//glöm inte att stänga    i ansi krävs att man vet vilken teckentabell som ska navändas, annars blir det konstigt med konstiga tecken
   return 0;
 }
