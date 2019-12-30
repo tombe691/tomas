@@ -8,14 +8,14 @@ namespace ConsoleApp1
 {
     class SavingsAccount
     {
-        public double saldo { get; set; }
-        public double ranta { get; set; }
+        public decimal saldo { get; set; }
+        public decimal ranta { get; set; }
         public int type { get; set; }
         public int kontonummer { get; set; }
 
         
 
-        public SavingsAccount(double saldo1, double ranta1, int type1)
+        public SavingsAccount(decimal saldo1, decimal ranta1, int type1)
         {
             saldo = saldo1;
             ranta = ranta1;

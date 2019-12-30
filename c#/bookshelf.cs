@@ -187,4 +187,4 @@ namespace bookShelf
 	this.type = "Novellsamling";
       }
   }
-}n
+}

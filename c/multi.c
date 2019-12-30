@@ -43,22 +43,22 @@ double median(int list[], int n)
 }
 
 int main() {
-  int iot17[] = {20, 15, 26, 18, 30, 22, 23, 24};
-  int is16[] = {11, 24, 15, 27, 19, 30, 21, 25};
+  int a[] = {20, 15, 26, 18, 30, 22, 23, 24};
+  int b[] = {11, 24, 15, 27, 19, 30, 21, 25};
 
-  bubble_sort(iot17, 8);
-  bubble_sort(is16, 8);
+  bubble_sort(a, 8);
+  bubble_sort(b, 8);
   int all[4][2];
-  all[0][0] = average(iot17, 8);
-  all[0][1] = average(is16, 8);
-  all[1][0] = median(iot17, 8);
-  all[1][1] = median(is16, 8);
-  all[2][0] = iot17[0];
-  all[2][1] = is16[0];
-  all[3][0] = iot17[8-1];
-  all[3][1] = is16[8-1];
+  all[0][0] = average(a, 8);
+  all[0][1] = average(b, 8);
+  all[1][0] = median(a, 8);
+  all[1][1] = median(b, 8);
+  all[2][0] = a[0];
+  all[2][1] = b[0];
+  all[3][0] = a[8-1];
+  all[3][1] = b[8-1];
 
-  printf("\tiot17\tis16");
+  printf("\tA\tB");
   printf("\n");
   printf("average\t");
   for (int j=0; j<2; j++) {
