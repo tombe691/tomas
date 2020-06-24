@@ -4,33 +4,50 @@
 using namespace std;
 
 //void loop();
-void loop() {
+
+int placeBet() {
+    int bet;
+    cout << "V\x84lj en insats!" << std::endl;
+    cin >> bet;
+    return bet;
+}
+string placeNrOrColour() {
+    string choice;
+    cout << "V\x84lj en f\x84rg eller ett nummer!" << std::endl;
+    cin >> choice;
+    cout << choice;
+    return choice;
+}
+
+void loop(string choice, int winningNr) {
     bool isRunning = true;
     while (isRunning) {
-        int bet;
-        string choice;
-        cout << "V\x84lj en insats!" << std::endl;
-        cin >> bet;
 
-        cout << "V\x84lj en f\x84rg eller ett nummer!" << std::endl;
-        cin >> choice;
-        cout << choice;
 
         if (choice.compare("sluta") == 0) {
             isRunning = false;
+        }
+        else if (choice.compare(to_string(winningNr)) == 0) {
+            cout << "win!!";
+            isRunning = false;
+        }
+        else {
+            cout << "loose!!";
         }
     }
 }
 
 int main() {
     srand(time(0));
-    loop();
-    int roundNr;
+    int bet = placeBet();
+    string choice = placeNrOrColour();
+
+    int winningNr;
     double time = 1;
     for(int i=0; i<30;i++) {
         cout.flush();
-        roundNr = rand() % 36 + 1;
-        cout << roundNr << ", ";
+        winningNr = rand() % 36 + 1;
+        cout << winningNr << ", ";
         for(int j=0; j<100000000;j++) {
             for(int k=0; k<time;k++) {
 
@@ -41,6 +58,7 @@ int main() {
         //cout << '\b\b\b\b';
         //cout << endl;
     }
+    loop(choice, winningNr);
     return 0;
 }
 
