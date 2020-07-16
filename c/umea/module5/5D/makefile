@@ -7,10 +7,10 @@ CFLAGS = -Wall -g
 
 
 program1.o : src/main.c src/a_functions.c src/b_functions.c src/c_functions.c src/d_functions.c
-	gcc -c src/main.c src/a_functions.c src/b_functions.c src/c_functions.c src/d_functions.c
+	gcc -MM -c src/main.c src/a_functions.c src/b_functions.c src/c_functions.c src/d_functions.c
 
 program1 : main.o a_functions.o b_functions.o c_functions.o d_functions.o
-	gcc -o program1 main.o a_functions.o b_functions.o c_functions.o d_functions.o 
+	gcc MM -o program1 main.o a_functions.o b_functions.o c_functions.o d_functions.o 
 
 clean :
 	rm program1 *.o

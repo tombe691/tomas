@@ -72,6 +72,7 @@ namespace ConsoleApp1
                 if (customer1.socialSecurityNumber == pNr)
                 {
                     customer1.customerName = name;
+                    customer1.accounts[1] = name;
                     found = true;
                 }
             }
@@ -80,21 +81,54 @@ namespace ConsoleApp1
         //inte färdig måste få konton först
         public List<string> RemoveCustomer(long pNr)
         {
-            List<string> testList;// = new List<string>();
+            List<string> testList;
+            List<string> testList2 = new List<string>();
+            string result;
             foreach (Customer customer1 in customers)
             {
                 if (customer1.socialSecurityNumber == pNr)
                 {
                     testList = customer1.accounts;
-                    customers.Remove(customer1);
+                    
                     for (int i=2; i < testList.Count; i++)
                     {
                         int accountNr;
-                        Int32.TryParse(Console.ReadLine(),
+                        Int32.TryParse(testList[i],
                     out accountNr);
-                        CloseAccount(pNr, accountNr);
-                        //AccountList.Remove();
+                        result = CloseAccount(pNr, accountNr);
+                        testList2.Add(result);
                     }
+                    customers.Remove(customer1);
+                    return testList2;
+                }
+            }
+            return null;
+        }
+
+        public List<string> RemoveAccountFromCustomer(long pNr, int accountNr)
+        {
+//            List<string> testList;
+            List<string> testList2 = new List<string>();
+            string result;
+            foreach (Customer customer1 in customers)
+            {
+                if (customer1.socialSecurityNumber == pNr)
+                {
+                    for (int i = 2; i < customer1.accounts.Count; i++)
+                    {
+                        int accountNr2;
+                        
+                        Int32.TryParse(customer1.accounts[i],
+                    out accountNr2);
+                        if (accountNr2 == accountNr)
+                        {
+                            //customer1.accounts.RemoveAt(i);
+                            result = CloseAccount(pNr, accountNr);
+                            testList2.Add(result);
+                            customer1.accounts.RemoveAt(i);
+                        }
+                    }
+                    return testList2;
                 }
             }
             return null;
@@ -103,11 +137,14 @@ namespace ConsoleApp1
         public int AddSavingsAccount(long pNr)
         {
             int number = -1;
+            decimal amount = 0;
+            decimal interest = 1.0m;//1%
+            int accountType = 1;//typ 1 = sparkonto
             foreach (Customer customer1 in customers)
             {
                 if (customer1.socialSecurityNumber == pNr)
                 {
-                    SavingsAccount saveAcc = new SavingsAccount(5.5, 10.5, 1);
+                    SavingsAccount saveAcc = new SavingsAccount(amount, interest, accountType);
                     saveAcc.kontonummer = accountNr;
                     number = saveAcc.kontonummer;
                     customer1.accounts.Add(number.ToString());
@@ -123,23 +160,132 @@ namespace ConsoleApp1
 
         public string GetAccount(long pNr, int accountId)
         {
+            decimal amount;
+            decimal interest;
+            string result = "tomt, något blev fel";
+            for (int i = 0; i < AccountList.Count; i++)
+            {
+                if (AccountList[i].kontonummer == accountId)
+                {
+                    amount = AccountList[i].saldo;
+                    interest = AccountList[i].ranta;
+                    //AccountList.Remove(AccountList[i]);
+                    result = accountId + " saldo " + amount + " ränta " + interest + "% = " + (amount * interest / 100);
+                    return result;
+                }
+            }
+            return null;
+        }
+        public string GetAllAccounts(long pNr, int accountId)
+        {
+            decimal amount;
+            decimal interest;
+            string result = "tomt, något blev fel";
+            for (int i = 2; i < AccountList.Count; i++)
+            {
+                //Console.WriteLine("GetAccount "+AccountList[i].kontonummer+" "+accountId);
+                if (AccountList[i].kontonummer == accountId)
+                {
+                    amount = AccountList[i].saldo;
+                    interest = AccountList[i].ranta;
+                    //AccountList.Remove(AccountList[i]);
+                    result = accountId + " saldo " + amount + " ränta " + interest + "% = " + (amount * interest / 100);
+                    return result;
+                }
+                else
+                {
+                    Console.WriteLine("GetAccount else i= " + i + " " + AccountList[i].kontonummer + " " + accountId);
+                }
+
+            }
             return null;
         }
 
         public bool Deposit(long pNr, int accountId, decimal amount)
         {
-            return false;
+            List<string> testList2 = new List<string>();
+            bool result = false;
+            foreach (Customer customer1 in customers)
+            {
+                if (customer1.socialSecurityNumber == pNr)
+                {
+                    for (int i = 2; i < customer1.accounts.Count; i++)
+                    {
+                        int accountNr2;
+
+                        Int32.TryParse(customer1.accounts[i],
+                    out accountNr2);
+                        if (accountNr2 == accountId)
+                        {
+                            for (int j = 0; j < AccountList.Count; j++)
+                            {
+                                if (AccountList[j].kontonummer == accountId)
+                                {
+                                    decimal oldAmount = AccountList[j].saldo;
+
+                                    AccountList[j].saldo = amount + oldAmount;
+                                    result = true;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return result;
         }
 
         public bool Withdraw(long pNr, int accountId, decimal amount)
         {
-            return false;
+            List<string> testList2 = new List<string>();
+            bool result = false;
+            foreach (Customer customer1 in customers)
+            {
+                if (customer1.socialSecurityNumber == pNr)
+                {
+                    for (int i = 2; i < customer1.accounts.Count; i++)
+                    {
+                        int accountNr2;
+
+                        Int32.TryParse(customer1.accounts[i],
+                    out accountNr2);
+                        if (accountNr2 == accountId)
+                        {
+                            for (int j = 0; j < AccountList.Count; j++)
+                            {
+                                if (AccountList[j].kontonummer == accountId)
+                                {
+                                    decimal oldAmount = AccountList[j].saldo;
+
+                                    if (amount <= oldAmount)
+                                    {
+                                        AccountList[j].saldo = oldAmount - amount;
+                                        result = true;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return result;
         }
 
         public string CloseAccount(long pNr, int accountId)
         {
-            return null;
+            decimal amount;
+            decimal interest;
+            string result = "tomt, något blev fel";
+            for (int i = 0; i < AccountList.Count; i++)
+            {
+                if (AccountList[i].kontonummer == accountId)
+                {
+                    amount = AccountList[i].saldo;
+                    interest = AccountList[i].ranta;
+                    AccountList.Remove(AccountList[i]);
+                    result = accountId + " saldo " + amount + " ränta " + interest + "% = "+(amount*interest/100);
+                }
+            }
+            return result;
         }
-
     }
 }
