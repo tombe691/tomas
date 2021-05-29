@@ -3,17 +3,17 @@
 int main()
 {
   FILE *ptr_file;
-  char buf[10];
+  char buf[50];
 
-  ptr_file =fopen("c:/tomas/c/simple/testutf8.txt","r");   //öppnar fil för läsning
+  ptr_file =fopen("c:/tomas/c/simple/test99.txt","r");   //ï¿½ppnar fil fï¿½r lï¿½sning
   if (!ptr_file)
     return 1;
-  //så länge vi inte kommer till slutet, läs in 10 tecken i taget, observera radbrytningar
-  while (fgets(buf,10, ptr_file)!=NULL){      
+  //sï¿½ lï¿½nge vi inte kommer till slutet, lï¿½s in 10 tecken i taget, observera radbrytningar
+  while (fgets(buf,50, ptr_file)!=NULL){      
     printf("%s",buf);
-    system("pause");//väntar för att visa rad för rad
+    system("pause");//vï¿½ntar fï¿½r att visa rad fï¿½r rad
   }
 
-  fclose(ptr_file);//glöm inte att stänga    i ansi krävs att man vet vilken teckentabell som ska navändas, annars blir det konstigt med konstiga tecken
+  fclose(ptr_file);//glï¿½m inte att stï¿½nga    i ansi krï¿½vs att man vet vilken teckentabell som ska navï¿½ndas, annars blir det konstigt med konstiga tecken
   return 0;
 }

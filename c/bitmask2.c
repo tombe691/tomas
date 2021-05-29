@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define FIRST_BIT 1 (0x1)
+#define FIRST_BIT 1 (0x1) 
 #define SECOND_BIT (0x2)
 #define THIRD_BIT (0x4)
 #define FOURTH_BIT (0x8)

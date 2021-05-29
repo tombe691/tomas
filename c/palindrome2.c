@@ -16,7 +16,7 @@ int main()
  
    for (begin = 0; begin < middle; begin++)
    {
-      if (text[begin] != text[end])
+      if (text[begin] != toupper(text[end]))
       {
          printf("Not a palindrome.\n");
          break;
